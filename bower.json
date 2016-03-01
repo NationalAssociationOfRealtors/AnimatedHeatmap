@@ -1,0 +1,34 @@
+{
+  "name": "AnimatedHeatMap",
+  "version": "1.0.0",
+  "authors": [
+    "Christopher Cote <chris@entropealabs.com>"
+  ],
+  "description": "Animated heat map over time using heatmap.js, Leaflet and TimespanEmitter",
+  "main": "animatedheatmap.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "heatmap",
+    "animated",
+    "leaflet",
+    "timespan"
+  ],
+  "license": "MIT",
+  "homepage": "github.com/NationalAssociationofREALTORS/AnimatedHeatmap",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "TimespanEmitter": "*",
+    "jquery": "~2.2.1",
+    "leaflet": "~0.7.7",
+    "leaflet.heat": "Leaflet.heat#*"
+  }
+}

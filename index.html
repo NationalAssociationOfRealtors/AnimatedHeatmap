@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Animated Heatmap</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/leaflet/dist/leaflet.js"></script>
+		<script src="bower_components/leaflet.heat/dist/leaflet-heat.js"></script>
+		<script src="bower_components/TimespanEmitter/TimespanEmitter.js"></script>
+		<script src="animatedheatmap.js"></script>
+        <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css">
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+    <script>
+		$("#map").height($(window).height());
+		var austin ={"coords": [30.267961, -97.745856], "id": 1, "name": "Austin, TX"};
+		var cfg = {
+            radius: 25,
+            minOpacity: .1,
+			max:.01,
+        };
+        var carto_light = 'http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+		zoom = 12,
+		$.getJSON('sample-data.json', function(data){
+			console.log(data);
+			var am = new AnimatedHeatmap(
+				austin,//central location
+				zoom,//zoom
+				data,//data
+				"map",//container
+				carto_light,//tiles
+				new Date('2016-02-18T22:00:00Z'),//start date
+				new Date('2016-02-19T12:00:00Z'),//end_date
+				60000,//interval
+				1000,//playback_rate
+				true,//loop
+				cfg//heatmap_config
+			);
+			am.start();
+		});
+    </script>
+</html>
