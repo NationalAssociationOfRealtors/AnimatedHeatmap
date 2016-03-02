@@ -1,6 +1,6 @@
 'use strict';
 
-if (typeof module !== 'undefined') module.exports = simpleheat;
+if (typeof module !== 'undefined') module.exports = AnimatedHeatmap;
 
 var Timestamp = L.Control.extend({
     options: {
